@@ -6,8 +6,8 @@
 </template>
 
 <script>
-// import init, { ImagequantImage, Imagequant } from 'tinypng-lib'
-import { ImagequantImage, Imagequant } from "../../pkg/index.js"
+import init, { ImagequantImage, Imagequant } from 'tinypng-lib'
+// import { ImagequantImage, Imagequant } from "../../pkg/index.js"
 
 function padArrayBuffer(buffer) {
   const padding = buffer.byteLength % 4;
@@ -120,7 +120,7 @@ export default {
     //   console.log('res', res)
     // })
     // console.log('result', ImagequantImage, Imagequant)
-    // await init()
+    // await init("node_modules/tinypng-lib/tinypng_lib_bg.wasm")
   },
   methods: {
     uploadImg(e) {

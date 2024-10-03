@@ -8,6 +8,9 @@ module.exports = defineConfig({
       asyncWebAssembly: true, // 启用异步 WebAssembly，推荐方式
       // 或者 syncWebAssembly: true (不推荐使用同步方式，因为它已被废弃)
     },
+    resolve: {
+      extensions: ['.js', '.wasm'],
+    },
   // 设置 .wasm 文件的模块规则
     module: {
       rules: [
@@ -19,9 +22,9 @@ module.exports = defineConfig({
       ],
     },
     plugins:[
-      new WasmPackPlugin({
-        crateDirectory: path.resolve(__dirname, ".")
-    })
+    //   new WasmPackPlugin({
+    //     crateDirectory: path.resolve(__dirname, "./node_modules/tinypng-lib"),
+    // })
     ]
   }
 })

@@ -2,3 +2,7 @@
 # yarn lockfile v1
 
 
+tinypng-lib@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.npmjs.org/tinypng-lib/-/tinypng-lib-0.1.0.tgz"
+  integrity sha512-yIOc5NrVf7ePNhgd3Glv2hU5ugk3WeSbY/9+SfBzYlAKmnGaVHPbF5JWRgRdtQlOyGOCxKOa4Oo0oU4Rpag7hA==
