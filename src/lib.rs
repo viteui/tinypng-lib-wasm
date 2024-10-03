@@ -71,7 +71,6 @@ impl Imagequant {
     /// If max is less than 100, the library will try to use fewer colors.
     /// Images with fewer colors are not always smaller, due to increased dithering it causes.
     pub fn set_quality(&mut self, minimum: u8, target: u8) -> Result<(), JsError> {
-        println!("set_quality {:?} {:?}", minimum, target);
         self.instance
             .set_quality(minimum, target)
             .map_err(JsError::from)

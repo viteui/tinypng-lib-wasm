@@ -1,9 +1,9 @@
 const { defineConfig } = require('@vue/cli-service')
-const WasmPackPlugin = require("@wasm-tool/wasm-pack-plugin");
-const path = require("path");
+// const WasmPackPlugin = require("@wasm-tool/wasm-pack-plugin");
+// const path = require("path");
 module.exports = defineConfig({
   transpileDependencies: true,
-  configureWebpack:{
+  configureWebpack: {
     experiments: {
       asyncWebAssembly: true, // 启用异步 WebAssembly，推荐方式
       // 或者 syncWebAssembly: true (不推荐使用同步方式，因为它已被废弃)
@@ -11,7 +11,7 @@ module.exports = defineConfig({
     resolve: {
       extensions: ['.js', '.wasm'],
     },
-  // 设置 .wasm 文件的模块规则
+    // 设置 .wasm 文件的模块规则
     module: {
       rules: [
         {
@@ -21,10 +21,10 @@ module.exports = defineConfig({
         // 其他规则...
       ],
     },
-    plugins:[
+    // plugins: [
     //   new WasmPackPlugin({
     //     crateDirectory: path.resolve(__dirname, "./node_modules/tinypng-lib"),
-    // })
-    ]
+    //   })
+    // ]
   }
 })

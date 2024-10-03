@@ -159,13 +159,13 @@ export default {
           this.imgUrl = url;
           img.src = url;
           // 压缩后图片文件大小
-          
+
           // img.onload = () => {
           //   setTimeout(() => {
           //     console.log('压缩后图片大小', img.size)
           //   }, 1000)
           // }
-          console.log('压缩后大小', size, blob.size, blob.size / size)
+          console.log('压缩后大小', size, blob.size, "压缩比率", `${((blob.size / size) * 100).toFixed(2)}%`)
         } catch (error) {
           console.log('error', error)
         }
