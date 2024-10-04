@@ -1,5 +1,15 @@
 {
+  "name": "tinypng",
+  "version": "1.0.1",
+  "description": "## 介绍",
+  "main": "index.js",
+  "scripts": {
+    "p": "node ./publish.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "tinypng-lib": "^0.1.0"
+    "wcrane-tool": "^1.0.22"
   }
 }
