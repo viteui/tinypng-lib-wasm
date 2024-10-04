@@ -1,7 +1,23 @@
 [package]
 name = "tinypng-lib"
-version = "1.0.46"
+version = "1.0.47"
 edition = "2021"
+author = ["wacrne"]
+description = "TinyPNG Rust WASM Library"
+license = "MIT"
+keywords = [
+    "tinypng",
+    "tinify",
+    "image",
+    "wasm",
+    "webassembly",
+    "图片压缩",
+    "前端压缩",
+    "图片压缩库",
+    "图片压缩工具",
+    "图片压缩插件",
+    "开箱即用",
+    "压缩图片"]
 
 [lib]
 crate-type = ["cdylib", "rlib"]
