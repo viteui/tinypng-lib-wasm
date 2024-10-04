@@ -1,0 +1,28 @@
+{
+  "name": "tinypng-lib-wasm",
+  "type": "module",
+  "version": "1.0.38",
+  "files": [
+    "tinypng_lib_bg.wasm",
+    "tinypng_lib.js",
+    "tinypng_lib_bg.js",
+    "tinypng_lib.d.ts"
+  ],
+  "main": "tinypng_lib.js",
+  "types": "tinypng_lib.d.ts",
+  "sideEffects": [
+    "./tinypng_lib.js",
+    "./snippets/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viteui/tinypng-lib-wasm.git"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/viteui/tinypng-lib-wasm/blob/master/LICENSE"
+    }
+  ],
+  "readme": "https://github.com/viteui/tinypng-lib-wasm/blob/master/README.md"
+}

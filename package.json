@@ -1,6 +1,6 @@
 {
   "name": "tinypng",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "wcrane",
   "homepage": "https://github.com/viteui/tinypng-lib-wasm#readme",
   "main": "index.js",
