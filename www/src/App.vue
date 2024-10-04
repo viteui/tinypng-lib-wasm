@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <input type="file" @change="uploadImg" />
+    <input type="file" @input="uploadImg" />
     <img :src="imgUrl" alt="">
   </div>
 </template>
@@ -147,9 +147,10 @@ export default {
         const image = new ImagequantImage(uint8Array, width, height, 0)
         const instance = new Imagequant()
         // 配置压缩质量
-        instance.set_quality(30, 85)
+        instance.set_quality(30, 50)
         console.log('set_quality', instance, image)
         try {
+          console.time('压缩时间')
           // 启动压缩
           const output = instance.process(image);
           // console.log('output', output)
@@ -165,6 +166,7 @@ export default {
           //     console.log('压缩后图片大小', img.size)
           //   }, 1000)
           // }
+          console.timeEnd('压缩时间')
           console.log('压缩后大小', size, blob.size, "压缩比率", `${((blob.size / size) * 100).toFixed(2)}%`)
         } catch (error) {
           console.log('error', error)

@@ -3,19 +3,21 @@ import { ImagequantImage, Imagequant } from 'tinypng-lib'
 export default class TinyPNG {
     constructor() {
         this.imagequant = new Imagequant()
-        this.imagequant.set_quality(80, 100)
     }
 
-    /**
-     * @param {string} image
-     * @returns {Promise<ImagequantImage>}
-     */
-    async load(image) {
-        return this.imagequant.load(image)
+    async compressImage(file, {
+        width,
+        height,
+        quality = 100
+    }) {
+        const imageData = await this.getImageData(file);
+        const image = new ImagequantImage(this.imagequant, imageData.buffer, imageData.width, imageData.height, 4);
+        const compressedImage = image.quantize();
+        const compressedBuffer = compressedImage.toRGBA8();
+        const compressedSize = compressedBuffer.byteLength;
     }
     getImageData = (file) => {
         return new Promise((resolve, reject) => {
-            const reader = new FileReader();
 
             // 创建一个 Image 对象
             const img = new Image();
