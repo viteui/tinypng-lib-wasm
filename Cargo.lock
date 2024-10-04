@@ -160,7 +160,7 @@ dependencies = [
 
 [[package]]
 name = "tinypng-lib"
-version = "0.1.0"
+version = "1.0.43"
 dependencies = [
  "console_error_panic_hook",
  "imagequant",

@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-
+const { execSync } = require('child_process');
 module.exports = {
     // 发布目录
     root: "./pkg",
@@ -16,8 +16,9 @@ module.exports = {
     gitRoot: '.',
     // 发布前执行
     before(config) {
+        // 构建wasm 
+        execSync('npm run build');
         // 拷贝当前目录下的 README 到 ./pkg下
-
         const pkgDir = path.resolve(__dirname, 'pkg');
         const pkgReadmePath = path.resolve(pkgDir, 'README.md');
 
@@ -28,7 +29,12 @@ module.exports = {
     },
     // 发布后执行
     after(config) {
-        // console.log(config)
+        // 修改Cargo.toml 中的版本号
+        const pkgDir = path.resolve(__dirname, '.');
+        const pkgTomlPath = path.resolve(pkgDir, 'Cargo.toml');
+        const pkgToml = fs.readFileSync(pkgTomlPath, 'utf-8');
+        const newPkgToml = pkgToml.replace(/version = ".*?"/, `version = "${config.version}"`);
+        fs.writeFileSync(pkgTomlPath, newPkgToml, 'utf-8');
     },
     // git tag 格式
     gitTagFormat: (version) => {
