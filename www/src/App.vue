@@ -6,8 +6,7 @@
 </template>
 
 <script>
-import init, { ImagequantImage, Imagequant } from 'tinypng-lib'
-// import { ImagequantImage, Imagequant } from "../../pkg/index.js"
+import { ImagequantImage, Imagequant } from 'tinypng-lib-wasm'
 
 function padArrayBuffer(buffer) {
   const padding = buffer.byteLength % 4;
@@ -23,34 +22,7 @@ function padArrayBuffer(buffer) {
   }
   return paddedBuffer;
 }
-
-
-// 获取图片的宽高、buffer、大小
-// const getImageData = (file) => {
-//   return new Promise(async (resolve, reject) => {
-//     console.log(await file.arrayBuffer())
-//     const reader = new FileReader()
-//     // 获取图片的宽高、buffer、大小
-
-//     // 通过fileReader获取buffer
-//     reader.readAsArrayBuffer(file)
-//     // 获取图片的宽高
-//     const img = new Image()
-//     img.src = URL.createObjectURL(file)
-//     reader.onload = function (e) {
-//       const buffer = e.target.result
-//       setTimeout(async () => {
-//         resolve({
-//           buffer: padArrayBuffer(buffer),
-//           width: img.width,
-//           height: img.height,
-//           size: file.size
-//         })
-//       }, 1000)
-//     }
-//   })
-
-// }
+// 获取图片信息：宽、高、像素数据、图片大小
 const getImageData = (file) => {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
@@ -115,13 +87,6 @@ export default {
       imgUrl: ''
     }
   },
-  async mounted() {
-    // result().then(res => {
-    //   console.log('res', res)
-    // })
-    // console.log('result', ImagequantImage, Imagequant)
-    // await init("node_modules/tinypng-lib/tinypng_lib_bg.wasm")
-  },
   methods: {
     uploadImg(e) {
       const file = e.target.files[0]
@@ -131,19 +96,12 @@ export default {
         height,
         size
       }) => {
-        // 将buffer转为图片
-        // const blob = new Blob([buffer], { type: 'image/png' })
-        // const url = URL.createObjectURL(blob)
-        // const img = new Image()
-        // this.imgUrl = url
-
         // 将 Uint8Array 数据从发给 Imagequant/WASM
         const uint8Array = new Uint8Array(buffer)
         console.log('uint8Array', buffer, uint8Array, width, height)
         // buffer 转图片
 
 
-        console.log(ImagequantImage)
         const image = new ImagequantImage(uint8Array, width, height, 0)
         const instance = new Imagequant()
         // 配置压缩质量
@@ -160,20 +118,11 @@ export default {
           this.imgUrl = url;
           img.src = url;
           // 压缩后图片文件大小
-
-          // img.onload = () => {
-          //   setTimeout(() => {
-          //     console.log('压缩后图片大小', img.size)
-          //   }, 1000)
-          // }
           console.timeEnd('压缩时间')
-          console.log('压缩后大小', size, blob.size, "压缩比率", `${((blob.size / size) * 100).toFixed(2)}%`)
+          console.log('压缩后大小', blob.size, "压缩之前", size, "压缩比率", `${((blob.size / size) * 100).toFixed(2)}%`)
         } catch (error) {
           console.log('error', error)
         }
-
-        // const outputBlob = new Blob([output.buffer], { type: 'image/png' })
-        // console.log('压缩前大小', size)
       })
     }
   }
