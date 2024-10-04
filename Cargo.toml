@@ -1,6 +1,6 @@
 [package]
-name = "tinypng-lib"
-version = "1.0.47"
+name = "tinypng-lib-wasm"
+version = "1.0.48"
 edition = "2021"
 author = ["wacrne"]
 description = "TinyPNG Rust WASM Library"

@@ -159,8 +159,8 @@ dependencies = [
 ]
 
 [[package]]
-name = "tinypng-lib"
-version = "1.0.47"
+name = "tinypng-lib-wasm"
+version = "1.0.48"
 dependencies = [
  "console_error_panic_hook",
  "imagequant",

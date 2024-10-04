@@ -1,19 +1,19 @@
 {
-  "name": "tinypng-lib",
+  "name": "tinypng-lib-wasm",
   "type": "module",
   "description": "TinyPNG Rust WASM Library",
-  "version": "1.0.48",
+  "version": "1.0.49",
   "license": "MIT",
   "files": [
-    "tinypng_lib_bg.wasm",
-    "tinypng_lib.js",
-    "tinypng_lib_bg.js",
-    "tinypng_lib.d.ts"
+    "tinypng_lib_wasm_bg.wasm",
+    "tinypng_lib_wasm.js",
+    "tinypng_lib_wasm_bg.js",
+    "tinypng_lib_wasm.d.ts"
   ],
-  "main": "tinypng_lib.js",
-  "types": "tinypng_lib.d.ts",
+  "main": "tinypng_lib_wasm.js",
+  "types": "tinypng_lib_wasm.d.ts",
   "sideEffects": [
-    "./tinypng_lib.js",
+    "./tinypng_lib_wasm.js",
     "./snippets/*"
   ],
   "keywords": [
