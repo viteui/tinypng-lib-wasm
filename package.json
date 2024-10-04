@@ -2,14 +2,25 @@
   "name": "tinypng",
   "version": "1.0.1",
   "description": "## 介绍",
+  "author": "wcrane",
+  "homepage": "https://github.com/viteui/tinypng-lib-wasm#readme",
   "main": "index.js",
   "scripts": {
     "p": "node ./publish.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "wcrane-tool": "^1.0.22"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viteui/tinypng-lib-wasm.git"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/viteui/tinypng-lib-wasm/blob/master/LICENSE"
+    }
+  ]
 }
