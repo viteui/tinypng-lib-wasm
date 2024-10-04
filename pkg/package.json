@@ -1,7 +1,7 @@
 {
   "name": "tinypng-lib-wasm",
   "type": "module",
-  "version": "1.0.39",
+  "version": "1.0.43",
   "files": [
     "tinypng_lib_bg.wasm",
     "tinypng_lib.js",
