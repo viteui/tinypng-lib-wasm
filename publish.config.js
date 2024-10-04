@@ -17,7 +17,7 @@ module.exports = {
     // 发布前执行
     before(config) {
         // 构建wasm 
-        execSync('npm run build');
+        execSync('npm run build'); // 或者使用 wasm-pack build --target bundler
         // 拷贝当前目录下的 README 到 ./pkg下
         const pkgDir = path.resolve(__dirname, 'pkg');
         const pkgReadmePath = path.resolve(pkgDir, 'README.md');
@@ -38,7 +38,7 @@ module.exports = {
     },
     // git tag 格式
     gitTagFormat: (version) => {
-        return `v${version}`
+        return `release/v${version}`
     },
 }
 

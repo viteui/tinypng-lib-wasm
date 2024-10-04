@@ -10,7 +10,7 @@
   "keywords": [],
   "license": "MIT",
   "dependencies": {
-    "wcrane-tool": "^1.0.22"
+    "wcrane-tool": "^1.0.28"
   },
   "repository": {
     "type": "git",
