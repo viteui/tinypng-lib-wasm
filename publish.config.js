@@ -5,13 +5,13 @@ module.exports = {
     // 发布目录
     root: "./pkg",
     // 是否同步git
-    syncGit: true,
+    syncGit: false,
     // 是否同步git tag
-    syncGitTag: true,
+    syncGitTag: false,
     // 升级版本号的等级
     versionLevel: 'patch', // major | minor | patch
     // 自定义发布
-    customPublish: false,
+    customPublish: true,
     // git 仓库根目录
     gitRoot: '.',
     // 发布前执行
