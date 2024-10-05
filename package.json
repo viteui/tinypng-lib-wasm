@@ -5,13 +5,11 @@
   "homepage": "https://github.com/viteui/tinypng-lib-wasm#readme",
   "main": "index.js",
   "scripts": {
-    "build": "wasm-pack build -t bundler"
+    "build": "wasm-pack build -t bundler",
+    "p": "pkg publish"
   },
   "keywords": [],
   "license": "MIT",
-  "dependencies": {
-    "wcrane-tool": "^1.0.28"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/viteui/tinypng-lib-wasm.git"
@@ -21,5 +19,8 @@
       "type": "MIT",
       "url": "https://github.com/viteui/tinypng-lib-wasm/blob/master/LICENSE"
     }
-  ]
+  ],
+  "devDependencies": {
+    "wcrane-tool": "^1.0.35"
+  }
 }
