@@ -2,7 +2,7 @@
   "name": "tinypng-lib-wasm",
   "type": "module",
   "description": "TinyPNG Rust WASM Library",
-  "version": "1.0.53",
+  "version": "1.0.54",
   "license": "MIT",
   "files": [
     "tinypng_lib_wasm_bg.wasm",
